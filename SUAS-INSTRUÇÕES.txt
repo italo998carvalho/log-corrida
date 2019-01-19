@@ -1,0 +1,17 @@
+O seguinte tópico do teste gerou uma dúvida quanto a lógica de desenvolvimento:
+
+    "A corrida termina quando o primeiro colocado completa 4 voltas"
+
+Através desta informação, caso interpretada ao pé da letra, entendesse que quando o primeiro 
+corredor completa a 4ª volta, todo o processo da corrida é finalizado e os corredores restantes
+não finalizam a prova, porém, o seguinte tópico entra em conflito com o primeiro:
+ 
+    "Descobrir quanto tempo cada piloto chegou após o vencedor"
+
+Se a corrida é finalizada após o primeiro corredor completar a 4ª volta, nenhum outro piloto chega
+após o vencedor.
+
+Tendo esta contradição em mãos desenvolvi uma aplicação com dois modos distintos, o primeiro
+se chama Stop mode, onde após o primeiro corredor completar a 4ª volta a corrida é finalizada, 
+e o segundo se chama Keep Running Mode, onde a corrida continua mesmo após haver um vencedor.
+Ambos os modos recebem a mesma entrada, porém, processam de formas diferentes.

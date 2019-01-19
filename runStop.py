@@ -1,0 +1,72 @@
+from src.grid import getFinalResultStop, getMelhorVoltaDaCorrida
+from src.logs import inputLog
+
+resultadoFinal = getFinalResultStop(inputLog)
+
+print("POSIÇÃO   CÓD. PILOTO   NOME DO PILOTO    VOLTAS COMPLETADAS    TEMPO TOTAL DE PROVA        MELHOR VOLTA       VEL. MÉDIA        DIFERENÇA")
+
+"""
+posição - 0
+cod. piloto - 10
+nome piloto - 24
+voltas completadas - 42
+tempo total de prova - 64
+melhor volta - 91
+vel média - 111
+diferença - 129
+
+"""
+
+for piloto in resultadoFinal:
+    if piloto['posicao'] == 1:
+        piloto['diferenca'] = '-'
+    else:
+        if piloto['voltas_completadas'] == resultadoFinal[0]['voltas_completadas']:
+            piloto['diferenca'] = piloto['tempo_total_de_prova'] - resultadoFinal[0]['tempo_total_de_prova']
+        else:
+            piloto['diferenca'] = 'Não completou a prova'
+
+    grid_position = ''
+    grid_position += str(piloto['posicao'])  + 'º'
+
+    while len(grid_position) < 13:
+        grid_position += ' '
+    
+    grid_position += str(piloto['cod_piloto'])
+
+    while len(grid_position) < 24:
+        grid_position += ' '
+    
+    grid_position += str(piloto['nome_piloto'])
+
+    while len(grid_position) < 49:
+        grid_position += ' '
+    
+    grid_position += str(piloto['voltas_completadas'])
+
+    while len(grid_position) < 62:
+        grid_position += ' '
+    
+    grid_position += str(piloto['tempo_total_de_prova'])
+
+    while len(grid_position) < 86:
+        grid_position += ' '
+    
+    grid_position += str(piloto['melhor_volta'])
+
+    while len(grid_position) < 106:
+        grid_position += ' '
+
+    grid_position += str(piloto['vel_media']) + " Km/h"
+
+    while len(grid_position) < 124:
+        grid_position += ' '
+
+    grid_position += str(piloto['diferenca'])
+
+    print(grid_position)
+
+melhor_volta = getMelhorVoltaDaCorrida(resultadoFinal)
+print("\nMELHOR VOLTA DA CORRIDA")
+print("Piloto: " + str(melhor_volta['piloto']))
+print("Tempo: " + str(melhor_volta['tempo']))
