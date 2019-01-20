@@ -5,18 +5,6 @@ resultadoFinal = getFinalResultStop(inputLog)
 
 print("POSIÇÃO   CÓD. PILOTO   NOME DO PILOTO    VOLTAS COMPLETADAS    TEMPO TOTAL DE PROVA        MELHOR VOLTA       VEL. MÉDIA        DIFERENÇA")
 
-"""
-posição - 0
-cod. piloto - 10
-nome piloto - 24
-voltas completadas - 42
-tempo total de prova - 64
-melhor volta - 91
-vel média - 111
-diferença - 129
-
-"""
-
 for piloto in resultadoFinal:
     if piloto['posicao'] == 1:
         piloto['diferenca'] = '-'

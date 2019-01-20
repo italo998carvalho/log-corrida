@@ -1,5 +1,3 @@
-from src.logs import *
-
 # Quebra a string de input em uma lista contendo as informações separadas
 # (hora, cod do piloto, nome, ...)
 def splitInput(inputlog):
@@ -47,7 +45,7 @@ def getCodPiloto(laps):
             listCodPiloto.append(lap['cod_piloto'])
     return listCodPiloto
 
-# Calcula as informações finais de cada piloto
+# Calcula as informações finais de cada piloto em Stop mode
 def generateFinalInfosStop(laps):
     import datetime
 
@@ -94,7 +92,7 @@ def generateFinalInfosStop(laps):
 
     return drivers
 
-# Calcula as informações finais de cada piloto
+# Calcula as informações finais de cada piloto em Keep running mode
 def generateFinalInfosKeepRunning(laps, listCodPiloto):
     import datetime
 
@@ -156,7 +154,7 @@ def sortFinalResult(infosPiloto):
     voltas = 4
     count = 1
 
-    # Procura primeiros os pilotos com 4 voltas completas, depois 3, 2 e 1
+    # Procura primeiro os pilotos com 4 voltas completas, depois 3, 2 e 1
     while voltas > 0:
         for info in infosPiloto:
             if int(info['voltas_completadas']) == voltas:

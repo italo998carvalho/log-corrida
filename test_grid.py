@@ -1,22 +1,3 @@
-"""
-- splitInput - Recebe a string grandona e faz uma lista dos itens dela já sem os espaços
-
-- getLaps - Recebe a lista de itens e retorna uma lista de dicionários com as infos de cada volta
-
-- getCodPiloto - Recebe a lista de voltas e retorna uma lista com o código dos pilotos participantes
-
-- generateFinalInfos - Recebe as voltas e os códigos dos pilotos e retorna uma lista com as 
-infos de cada piloto na corrida
-
-- sortFinalResult - Recebe a lista com as informações de cada piloto e retorna a mesma
-ordenada por número de voltas e por tempo
-
-- getMelhorVoltaDaCorrida - Recebe o resultado final da corrida e retorna o nome do piloto
-e o tempo da melhor volta
-
-- getFinalResult - Recebe a string de input inicial e chama todas as funções acima (com exceção da melhor volta)
-"""
-
 from src.logs import *
 from src.grid import *
 import unittest
